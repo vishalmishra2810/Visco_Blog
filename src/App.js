@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/home/Home";
 import DetailView from "./components/post/DetailView";
+import CreateView from "./components/post/CreateView";
+import UpdateView from "./components/post/UpdateView";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
       <Header />
       <Box style={{ marginTop: 64 }}>
         <Routes>
-          <Route path="/" component={Home} />
-          <Route path="/details" component={DetailView} />
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/details" element={<DetailView />}></Route>
+          <Route path="/create" element={<CreateView />}></Route>
+          <Route path="/update" element={<UpdateView />}></Route>
         </Routes>
       </Box>
     </BrowserRouter>
